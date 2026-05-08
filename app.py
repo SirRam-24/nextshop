@@ -35,11 +35,13 @@ def index():
 def contact():
     name = request.form.get('name')
     email = request.form.get('email')
+    phone = request.form.get('phone')
     service = request.form.get('service')
     message = request.form.get('message')
     db.contacts.insert_one({
         'name': name,
         'email': email,
+        'phone': phone,
         'service': service,
         'message': message
     })

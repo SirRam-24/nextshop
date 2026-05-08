@@ -26,6 +26,7 @@
                 <tr class="bg-gray-50 border-b border-gray-100">
                     <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">Date/Name</th>
                     <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">Email</th>
+                    <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">Phone</th>
                     <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">Service</th>
                     <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">Message</th>
                 </tr>
@@ -36,6 +37,7 @@
                     <tr class="hover:bg-gray-50 transition-colors">
                         <td class="py-4 px-6 text-sm font-medium text-gray-900">{{ contact.name }}</td>
                         <td class="py-4 px-6 text-sm text-gray-500"><a href="mailto:{{ contact.email }}" class="text-brand-500 hover:underline">{{ contact.email }}</a></td>
+                        <td class="py-4 px-6 text-sm text-gray-500"><a href="tel:{{ contact.phone }}" class="text-brand-500 hover:underline">{{ contact.phone }}</a></td>
                         <td class="py-4 px-6 text-sm">
                             <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">{{ contact.service }}</span>
                         </td>
@@ -44,7 +46,7 @@
                     {% endfor %}
                 {% else %}
                     <tr>
-                        <td colspan="4" class="py-8 text-center text-gray-500 text-sm">No messages received yet.</td>
+                        <td colspan="5" class="py-8 text-center text-gray-500 text-sm">No messages received yet.</td>
                     </tr>
                 {% endif %}
             </tbody>
