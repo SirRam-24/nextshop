@@ -1,0 +1,59 @@
+{% extends "admin/base.html" %}
+
+{% block header_title %}Manage FAQs{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Add Form -->
+    <div class="lg:col-span-1">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sticky top-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Add FAQ</h3>
+            <form action="/admin/faqs" method="POST" class="space-y-4">
+                <div>
+                    <label for="question" class="block text-sm font-medium text-gray-700 mb-1">Question</label>
+                    <input type="text" id="question" name="question" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500">
+                </div>
+                <div>
+                    <label for="answer" class="block text-sm font-medium text-gray-700 mb-1">Answer</label>
+                    <textarea id="answer" name="answer" rows="4" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">
+                    Add FAQ
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FAQ List -->
+    <div class="lg:col-span-2">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 bg-gray-50/50">
+                <h3 class="font-semibold text-gray-800">Current FAQs</h3>
+            </div>
+            <div class="p-6">
+                {% if faqs %}
+                <div class="space-y-4">
+                    {% for faq in faqs %}
+                    <div class="border border-gray-200 rounded-lg p-4 group relative pr-12 hover:border-brand-300 transition-colors">
+                        <h4 class="font-semibold text-gray-900 mb-2">{{ faq.question }}</h4>
+                        <p class="text-gray-600 text-sm">{{ faq.answer }}</p>
+                        
+                        <a href="/admin/faqs/delete/{{ faq._id }}" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 hover:bg-red-50 p-2 rounded-full transition-colors opacity-0 group-hover:opacity-100" onclick="return confirm('Delete this FAQ?')">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="text-center py-12">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-circle-question text-gray-400 text-2xl"></i>
+                    </div>
+                    <p class="text-gray-500 text-sm">No FAQs added yet.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

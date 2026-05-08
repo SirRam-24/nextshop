@@ -1,0 +1,586 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-1/4 left-1/2 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+        <!-- Grid pattern overlay -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] z-0"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="text-center max-w-4xl mx-auto">
+          <br>
+          <br>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Build <span class="gradient-text">Smarter</span> Digital Experiences
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+                We help businesses grow through stunning websites, intelligent AI automation, and captivating digital media solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg shadow-[0_0_15px_rgba(45,212,191,0.5)] flex items-center justify-center gap-2">
+                    Get Started <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#projects" class="glass-panel text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-play"></i> View Projects
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Stats Cards -->
+        <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="text-3xl font-bold gradient-text mb-1">50+</div>
+                <div class="text-sm text-gray-400">Projects Delivered</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center translate-y-4">
+                <div class="text-3xl font-bold gradient-text mb-1">100%</div>
+                <div class="text-sm text-gray-400">Client Satisfaction</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="text-3xl font-bold gradient-text mb-1">24/7</div>
+                <div class="text-sm text-gray-400">AI Support</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center translate-y-4">
+                <div class="text-3xl font-bold gradient-text mb-1">5x</div>
+                <div class="text-sm text-gray-400">Growth Rate</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-24 relative z-10 bg-dark-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-2">Who We Are</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-6">Innovating the Digital Frontier.</h3>
+                <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                    NextShop Digital is a creative technology startup focused on building modern websites, AI-powered systems, and digital media solutions for businesses. We bridge the gap between imagination and technology.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="glass-panel p-5 rounded-xl border border-brand-500/20">
+                        <i class="fa-solid fa-bullseye text-2xl text-brand-400 mb-3"></i>
+                        <h4 class="text-white font-bold text-lg mb-2">Our Mission</h4>
+                        <p class="text-gray-400 text-sm">To empower businesses with scalable digital tools and smart automations that drive real growth.</p>
+                    </div>
+                    <div class="glass-panel p-5 rounded-xl border border-blue-500/20">
+                        <i class="fa-solid fa-eye text-2xl text-blue-400 mb-3"></i>
+                        <h4 class="text-white font-bold text-lg mb-2">Our Vision</h4>
+                        <p class="text-gray-400 text-sm">To become the global leader in accessible AI and top-tier web experiences for startups and enterprises.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="glass-card rounded-2xl p-8 relative z-10 border border-white/10">
+                    <h4 class="text-2xl font-bold text-white mb-6">Meet the Team</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        {% if team %}
+                            {% for member in team %}
+                            <div class="text-center group">
+                                <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-brand-500 mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <img src="{{ member.image_url or 'https://ui-avatars.com/api/?name=' + member.name|urlencode + '&background=0D8ABC&color=fff' }}" alt="{{ member.name }}" class="w-full h-full object-cover">
+                                </div>
+                                <h5 class="text-white font-medium">{{ member.name }}</h5>
+                                <p class="text-brand-400 text-xs">{{ member.role }}</p>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <p class="text-gray-400 text-sm col-span-2">Our amazing team members will be displayed here.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- Decorative blob -->
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-brand-500/30 rounded-full mix-blend-multiply filter blur-3xl z-0"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-24 relative bg-dark-900 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-2">What We Do</h2>
+            <h3 class="text-3xl md:text-5xl font-bold text-white">Premium Digital Services</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service 1: Web Dev -->
+            <div class="glass-card rounded-2xl p-8 group border border-white/5 hover:border-brand-500/50">
+                <div class="w-16 h-16 rounded-xl bg-brand-500/20 flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors">
+                    <i class="fa-solid fa-code text-3xl text-brand-400 group-hover:text-white"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-white mb-4">Website Development</h4>
+                <p class="text-gray-400 text-sm mb-6">Custom-built, ultra-fast websites tailored for your brand.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-globe text-brand-400"></i> Business & Portfolio Sites</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-cart-shopping text-brand-400"></i> E-commerce Solutions</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-laptop text-brand-400"></i> Admin Dashboards</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-mobile-screen text-brand-400"></i> Responsive & SEO-Ready</li>
+                </ul>
+            </div>
+
+            <!-- Service 2: AI & Automation -->
+            <div class="glass-card rounded-2xl p-8 group border border-white/5 hover:border-blue-500/50">
+                <div class="w-16 h-16 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors">
+                    <i class="fa-solid fa-robot text-3xl text-blue-400 group-hover:text-white"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-white mb-4">AI & Automation</h4>
+                <p class="text-gray-400 text-sm mb-6">Streamline operations with intelligent AI tools.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-robot text-blue-400"></i> AI Chatbots & Support</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-bolt text-blue-400"></i> Workflow Automation</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-brain text-blue-400"></i> Smart Dashboards & Integrations</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-brands fa-whatsapp text-blue-400"></i> WhatsApp Automation</li>
+                </ul>
+            </div>
+
+            <!-- Service 3: Video Production -->
+            <div class="glass-card rounded-2xl p-8 group border border-white/5 hover:border-purple-500/50">
+                <div class="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:bg-purple-500 transition-colors">
+                    <i class="fa-solid fa-video text-3xl text-purple-400 group-hover:text-white"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-white mb-4">Video Production</h4>
+                <p class="text-gray-400 text-sm mb-6">Engaging visual content that captures attention.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-film text-purple-400"></i> Reels & Promos</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-camera text-purple-400"></i> Product Advertisements</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-solid fa-play text-purple-400"></i> Motion Graphics</li>
+                    <li class="flex items-center gap-3 text-gray-300 text-sm"><i class="fa-brands fa-youtube text-purple-400"></i> YouTube Editing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-24 relative bg-dark-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 text-center md:text-left">
+            <div class="w-full md:w-auto">
+                <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-2">Our Portfolio</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white">Recent Work</h3>
+            </div>
+            <a href="#" class="text-brand-400 hover:text-brand-300 font-medium flex items-center justify-center gap-2 mt-6 md:mt-0 transition-colors w-full md:w-auto">
+                View All Projects <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% if projects %}
+                {% for project in projects %}
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent z-10"></div>
+                        <img src="{{ project.image_url or 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }}" alt="{{ project.name }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20 -mt-10">
+                        <span class="inline-block px-3 py-1 bg-brand-500/20 text-brand-300 text-xs font-semibold rounded-full mb-3 backdrop-blur-md border border-brand-500/30">{{ project.tech }}</span>
+                        <h4 class="text-xl font-bold text-white mb-2">{{ project.name }}</h4>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-2">{{ project.description }}</p>
+                        {% if project.demo_url %}
+                        <a href="{{ project.demo_url }}" target="_blank" class="text-white text-sm font-medium hover:text-brand-400 transition-colors flex items-center gap-2">
+                            Live Demo <i class="fa-solid fa-external-link-alt"></i>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Work In Progress / Rocket -->
+                <style>
+                    @keyframes rocket-shake {
+                        0%, 100% { transform: translateY(0) rotate(-45deg); }
+                        25% { transform: translateY(-3px) translateX(2px) rotate(-45deg); }
+                        50% { transform: translateY(2px) translateX(-2px) rotate(-45deg); }
+                        75% { transform: translateY(-2px) translateX(-2px) rotate(-45deg); }
+                    }
+                    @keyframes exhaust-flame {
+                        0%, 100% { transform: translateX(-50%) scaleY(1); opacity: 0.8; }
+                        50% { transform: translateX(-50%) scaleY(1.2); opacity: 1; }
+                    }
+                    @keyframes star-fly {
+                        0% { transform: translateY(-100px); opacity: 0; }
+                        10% { opacity: 1; }
+                        90% { opacity: 1; }
+                        100% { transform: translateY(500px); opacity: 0; }
+                    }
+                    .animate-rocket {
+                        animation: rocket-shake 0.4s infinite ease-in-out;
+                        display: inline-block;
+                    }
+                    .animate-flame {
+                        animation: exhaust-flame 0.15s infinite ease-in-out alternate;
+                        transform-origin: top center;
+                    }
+                    .star {
+                        position: absolute;
+                        background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(45,212,191,0.6), transparent);
+                        border-radius: 2px;
+                        animation: star-fly linear infinite;
+                    }
+                </style>
+                <div class="bg-dark-800/60 backdrop-blur-xl rounded-2xl overflow-hidden col-span-full p-12 md:p-20 text-center relative w-full min-h-[400px] flex items-center justify-center transition-colors duration-500">
+                    <!-- Warp Speed Stars Container -->
+                    <div class="absolute inset-0 overflow-hidden bg-dark-900/40 z-0">
+                        <div class="star" style="width: 2px; height: 30px; left: 10%; animation-duration: 0.6s; animation-delay: 0.1s;"></div>
+                        <div class="star" style="width: 1px; height: 20px; left: 25%; animation-duration: 0.4s; animation-delay: 0.5s;"></div>
+                        <div class="star" style="width: 3px; height: 40px; left: 40%; animation-duration: 0.5s; animation-delay: 0.2s;"></div>
+                        <div class="star" style="width: 2px; height: 25px; left: 60%; animation-duration: 0.7s; animation-delay: 0.4s;"></div>
+                        <div class="star" style="width: 3px; height: 45px; left: 75%; animation-duration: 0.3s; animation-delay: 0.8s;"></div>
+                        <div class="star" style="width: 2px; height: 35px; left: 85%; animation-duration: 0.45s; animation-delay: 0.3s;"></div>
+                        <div class="star" style="width: 1px; height: 15px; left: 95%; animation-duration: 0.55s; animation-delay: 0.15s;"></div>
+                    </div>
+                    
+                    <div class="absolute inset-0 bg-gradient-to-b from-brand-500/10 to-transparent mix-blend-overlay z-0"></div>
+                    
+                    <div class="relative z-10 flex flex-col items-center justify-center w-full">
+                        <!-- Rocket Animation Container -->
+                        <div class="w-40 h-40 mb-8 relative flex items-center justify-center">
+                            <!-- Exhaust Flames -->
+                            <div class="absolute top-[60%] left-1/2 w-10 h-24 bg-gradient-to-b from-yellow-200 via-orange-500 to-transparent rounded-full blur-[6px] animate-flame z-0"></div>
+                            <div class="absolute top-[65%] left-1/2 w-6 h-16 bg-gradient-to-b from-white via-yellow-300 to-transparent rounded-full blur-[2px] animate-flame z-0 delay-75"></div>
+
+                            <!-- Rocket icon -->
+                            <i class="fa-solid fa-rocket text-7xl text-white relative z-10 drop-shadow-[0_0_20px_rgba(45,212,191,0.8)] animate-rocket"></i>
+                        </div>
+                        
+                        <h4 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-wide transition-transform duration-500">Our Work is in <span class="gradient-text">Progress</span></h4>
+                        <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-light">
+                            We're moving at warp speed to launch some incredible digital experiences. Stay tuned for liftoff!
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-24 relative bg-dark-900 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-2">Advantages</h2>
+            <h3 class="text-3xl md:text-5xl font-bold text-white">Why Choose NextShop</h3>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-brand-500/30 transition-colors">
+                <i class="fa-solid fa-bolt text-2xl text-brand-400 mb-4"></i>
+                <h4 class="text-white font-semibold mb-2">Fast Delivery</h4>
+                <p class="text-gray-400 text-xs">Agile methodology for quick turnaround times.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-brand-500/30 transition-colors">
+                <i class="fa-solid fa-object-group text-2xl text-brand-400 mb-4"></i>
+                <h4 class="text-white font-semibold mb-2">Modern UI/UX</h4>
+                <p class="text-gray-400 text-xs">Stunning designs that captivate users.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-brand-500/30 transition-colors">
+                <i class="fa-solid fa-microchip text-2xl text-brand-400 mb-4"></i>
+                <h4 class="text-white font-semibold mb-2">AI Integration</h4>
+                <p class="text-gray-400 text-xs">Smart features that give you an edge.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-brand-500/30 transition-colors">
+                <i class="fa-solid fa-tags text-2xl text-brand-400 mb-4"></i>
+                <h4 class="text-white font-semibold mb-2">Affordable Pricing</h4>
+                <p class="text-gray-400 text-xs">High-end solutions for startup budgets.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-brand-500/30 transition-colors">
+                <i class="fa-solid fa-headset text-2xl text-brand-400 mb-4"></i>
+                <h4 class="text-white font-semibold mb-2">Full Support</h4>
+                <p class="text-gray-400 text-xs">We are here whenever you need us.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-brand-500/30 transition-colors">
+                <i class="fa-solid fa-mobile-screen-button text-2xl text-brand-400 mb-4"></i>
+                <h4 class="text-white font-semibold mb-2">Mobile Friendly</h4>
+                <p class="text-gray-400 text-xs">Flawless experience across all devices.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section id="process" class="py-24 relative bg-dark-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20 process-header">
+            <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-2">How We Work</h2>
+            <h3 class="text-3xl md:text-5xl font-bold text-white">Our Proven Process</h3>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+            <!-- Vertical Connecting Line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-brand-500/20 via-brand-500 to-brand-500/20 z-0 hidden md:block process-line origin-top"></div>
+            
+            <div class="space-y-12 relative z-10">
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row items-center justify-between w-full process-step">
+                    <div class="w-full md:w-5/12 text-center md:text-right mb-6 md:mb-0 md:pr-8">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-brand-500/30 transition-colors inline-block w-full">
+                            <h4 class="text-xl font-bold text-white mb-2">1. Discuss</h4>
+                            <p class="text-gray-400 text-sm">We start by understanding your core business needs, target audience, and project goals.</p>
+                        </div>
+                    </div>
+                    <div class="mx-auto w-12 h-12 bg-dark-900 border-4 border-brand-500 rounded-full flex items-center justify-center text-white font-bold shadow-[0_0_20px_rgba(45,212,191,0.5)] z-10 relative">
+                        <i class="fa-solid fa-comments text-sm text-brand-400"></i>
+                    </div>
+                    <div class="w-full md:w-5/12 hidden md:block"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row items-center justify-between w-full process-step">
+                    <div class="w-full md:w-5/12 hidden md:block"></div>
+                    <div class="mx-auto w-12 h-12 bg-dark-900 border-4 border-brand-500 rounded-full flex items-center justify-center text-white font-bold shadow-[0_0_20px_rgba(45,212,191,0.5)] z-10 relative mb-6 md:mb-0">
+                        <i class="fa-solid fa-pen-nib text-sm text-brand-400"></i>
+                    </div>
+                    <div class="w-full md:w-5/12 text-center md:text-left md:pl-8">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-brand-500/30 transition-colors inline-block w-full">
+                            <h4 class="text-xl font-bold text-white mb-2">2. Design</h4>
+                            <p class="text-gray-400 text-sm">We create intuitive wireframes and stunning UI designs tailored to your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row items-center justify-between w-full process-step">
+                    <div class="w-full md:w-5/12 text-center md:text-right mb-6 md:mb-0 md:pr-8">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-brand-500/30 transition-colors inline-block w-full">
+                            <h4 class="text-xl font-bold text-white mb-2">3. Develop</h4>
+                            <p class="text-gray-400 text-sm">Our experts write clean, scalable code for both frontend and robust backend systems.</p>
+                        </div>
+                    </div>
+                    <div class="mx-auto w-12 h-12 bg-dark-900 border-4 border-brand-500 rounded-full flex items-center justify-center text-white font-bold shadow-[0_0_20px_rgba(45,212,191,0.5)] z-10 relative">
+                        <i class="fa-solid fa-code text-sm text-brand-400"></i>
+                    </div>
+                    <div class="w-full md:w-5/12 hidden md:block"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col md:flex-row items-center justify-between w-full process-step">
+                    <div class="w-full md:w-5/12 hidden md:block"></div>
+                    <div class="mx-auto w-12 h-12 bg-dark-900 border-4 border-brand-500 rounded-full flex items-center justify-center text-white font-bold shadow-[0_0_20px_rgba(45,212,191,0.5)] z-10 relative mb-6 md:mb-0">
+                        <i class="fa-solid fa-bug-slash text-sm text-brand-400"></i>
+                    </div>
+                    <div class="w-full md:w-5/12 text-center md:text-left md:pl-8">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-brand-500/30 transition-colors inline-block w-full">
+                            <h4 class="text-xl font-bold text-white mb-2">4. Test</h4>
+                            <p class="text-gray-400 text-sm">Rigorous bug fixing, performance optimization, and quality assurance across devices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flex flex-col md:flex-row items-center justify-between w-full process-step">
+                    <div class="w-full md:w-5/12 text-center md:text-right mb-6 md:mb-0 md:pr-8">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-brand-500/30 transition-colors inline-block w-full">
+                            <h4 class="text-xl font-bold text-white mb-2">5. Deploy</h4>
+                            <p class="text-gray-400 text-sm">We smoothly launch your project to live servers with zero downtime and full security.</p>
+                        </div>
+                    </div>
+                    <div class="mx-auto w-12 h-12 bg-dark-900 border-4 border-brand-500 rounded-full flex items-center justify-center text-white font-bold shadow-[0_0_20px_rgba(45,212,191,0.5)] z-10 relative">
+                        <i class="fa-solid fa-rocket text-sm text-brand-400"></i>
+                    </div>
+                    <div class="w-full md:w-5/12 hidden md:block"></div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="flex flex-col md:flex-row items-center justify-between w-full process-step">
+                    <div class="w-full md:w-5/12 hidden md:block"></div>
+                    <div class="mx-auto w-12 h-12 bg-dark-900 border-4 border-brand-500 rounded-full flex items-center justify-center text-white font-bold shadow-[0_0_20px_rgba(45,212,191,0.5)] z-10 relative mb-6 md:mb-0">
+                        <i class="fa-solid fa-headset text-sm text-brand-400"></i>
+                    </div>
+                    <div class="w-full md:w-5/12 text-center md:text-left md:pl-8">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-brand-500/30 transition-colors inline-block w-full">
+                            <h4 class="text-xl font-bold text-white mb-2">6. Support</h4>
+                            <p class="text-gray-400 text-sm">Ongoing maintenance, updates, and dedicated technical support whenever you need it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-24 relative bg-dark-900 border-t border-white/5">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-2">Got Questions?</h2>
+            <h3 class="text-3xl md:text-5xl font-bold text-white">Frequently Asked</h3>
+        </div>
+
+        <div class="space-y-4">
+            {% if faqs %}
+                {% for faq in faqs %}
+                <details class="glass-card rounded-xl border border-white/5 group overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-brand-400 transition-colors">
+                        <span>{{ faq.question }}</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-400 mt-3 group-open:animate-fadeIn px-6 pb-6">
+                        <p>{{ faq.answer }}</p>
+                    </div>
+                </details>
+                {% endfor %}
+            {% else %}
+                <details class="glass-card rounded-xl border border-white/5 group overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-brand-400 transition-colors">
+                        <span>How long does a website take?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 mt-3 px-6 pb-6"><p>Depending on complexity, a standard business website takes 2-4 weeks.</p></div>
+                </details>
+                <details class="glass-card rounded-xl border border-white/5 group overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-brand-400 transition-colors">
+                        <span>Do you provide hosting?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 mt-3 px-6 pb-6"><p>Yes, we offer fully managed hosting and domain setup.</p></div>
+                </details>
+                <details class="glass-card rounded-xl border border-white/5 group overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-brand-400 transition-colors">
+                        <span>Can you redesign old websites?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 mt-3 px-6 pb-6"><p>Absolutely! We revamp outdated designs into modern, high-converting platforms.</p></div>
+                </details>
+                <details class="glass-card rounded-xl border border-white/5 group overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-brand-400 transition-colors">
+                        <span>What technologies do you use?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 mt-3 px-6 pb-6"><p>We use modern stacks including React, Next.js, Node.js, Python/Flask, and Tailwind CSS.</p></div>
+                </details>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 relative bg-dark-900 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-2">Get In Touch</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's Build Something Great Together.</h3>
+                <p class="text-gray-400 mb-10">Have a project in mind? We'd love to hear about it. Drop us a message and we will get back to you immediately.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center">
+                            <i class="fa-solid fa-envelope text-brand-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium">Email Us</p>
+                            <p class="text-gray-400 text-sm">hello@nextshop.digital</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center">
+                            <i class="fa-solid fa-phone text-brand-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium">Call Us</p>
+                            <p class="text-gray-400 text-sm">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="https://wa.me/15551234567" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full font-medium transition-colors shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl border border-white/10">
+                <form action="/contact" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" required class="w-full bg-dark-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-dark-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Needed</label>
+                        <select id="service" name="service" class="w-full bg-dark-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all appearance-none">
+                            <option value="Web Development">Web Development</option>
+                            <option value="AI & Automation">AI & Automation</option>
+                            <option value="Video Production">Video Production</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full bg-dark-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full btn-primary text-white font-bold py-4 rounded-lg shadow-lg flex justify-center items-center gap-2">
+                        Send Message <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Process line animation
+            gsap.fromTo(".process-line", 
+                { scaleY: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: "#process",
+                        start: "top center",
+                        end: "bottom center",
+                        scrub: 1
+                    },
+                    scaleY: 1,
+                    transformOrigin: "top top",
+                    ease: "none"
+                }
+            );
+
+            // Process steps animation
+            const steps = gsap.utils.toArray('.process-step');
+            steps.forEach((step, i) => {
+                let xOffset = i % 2 === 0 ? -50 : 50;
+                
+                // For mobile, make everything come from the bottom
+                if (window.innerWidth < 768) {
+                    xOffset = 0;
+                }
+                
+                gsap.fromTo(step, 
+                    { opacity: 0, x: xOffset, y: 30 },
+                    {
+                        scrollTrigger: {
+                            trigger: step,
+                            start: "top 85%",
+                            toggleActions: "play none none reverse"
+                        },
+                        opacity: 1,
+                        x: 0,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out"
+                    }
+                );
+            });
+        }
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextShop Admin Panel</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], },
+                    colors: {
+                        brand: { 500: '#14b8a6', 600: '#0d9488' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-900">
+
+    <!-- Flash Messages -->
+    <div class="fixed top-4 right-4 z-50">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="bg-white border-l-4 {% if category == 'success' %}border-green-500 text-green-700{% else %}border-red-500 text-red-700{% endif %} p-4 rounded shadow-lg mb-2 flex items-center justify-between min-w-[300px]">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid {% if category == 'success' %}fa-check-circle{% else %}fa-exclamation-circle{% endif %}"></i>
+                            <span>{{ message }}</span>
+                        </div>
+                        <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-times"></i></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 text-white flex-shrink-0">
+            <div class="h-16 flex items-center px-6 bg-gray-950 border-b border-gray-800">
+                <span class="text-xl font-bold tracking-tight">NextShop <span class="text-brand-500">Admin</span></span>
+            </div>
+            <nav class="p-4 space-y-2 mt-4">
+                <a href="/admin" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors {% if request.path == '/admin' %}bg-gray-800 text-brand-500{% endif %}">
+                    <i class="fa-solid fa-gauge w-5"></i> Dashboard
+                </a>
+                <a href="/admin/team" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors {% if request.path == '/admin/team' %}bg-gray-800 text-brand-500{% endif %}">
+                    <i class="fa-solid fa-users w-5"></i> Team Members
+                </a>
+                <a href="/admin/projects" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors {% if request.path == '/admin/projects' %}bg-gray-800 text-brand-500{% endif %}">
+                    <i class="fa-solid fa-briefcase w-5"></i> Projects
+                </a>
+                <a href="/admin/faqs" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors {% if request.path == '/admin/faqs' %}bg-gray-800 text-brand-500{% endif %}">
+                    <i class="fa-solid fa-circle-question w-5"></i> FAQs
+                </a>
+                <div class="pt-8 mt-8 border-t border-gray-800">
+                    <a href="/" target="_blank" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 text-gray-400 hover:text-white transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square w-5"></i> View Website
+                    </a>
+                    <a href="/admin/logout" class="flex items-center gap-3 px-4 py-3 mt-2 rounded-lg hover:bg-red-900/30 text-red-400 hover:text-red-300 transition-colors">
+                        <i class="fa-solid fa-right-from-bracket w-5"></i> Logout
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
+                <h1 class="text-xl font-semibold text-gray-800">{% block header_title %}Dashboard{% endblock %}</h1>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm text-gray-500">Admin User</span>
+                    <div class="w-8 h-8 rounded-full bg-brand-500 text-white flex items-center justify-center font-bold">A</div>
+                </div>
+            </header>
+            
+            <div class="flex-1 overflow-y-auto p-8 bg-gray-50">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>
