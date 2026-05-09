@@ -17,7 +17,7 @@
           <br>
           <br>
             <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                Build <span class="gradient-text">Smarter</span> Digital Experiences
+                <span class="scramble-text">Build</span> <span class="gradient-text scramble-text">Smarter</span> <span class="scramble-text">Digital Experiences</span>
             </h1>
             <p class="mt-4 text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
                 We help businesses grow through stunning websites, intelligent AI automation, and captivating digital media solutions.
@@ -57,7 +57,7 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="py-24 relative z-10 bg-dark-900 overflow-hidden">
+<section id="about" class="min-h-screen flex items-center py-24 relative z-10 bg-dark-900 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -309,8 +309,8 @@
 </section>
 
 <!-- Process Section -->
-<section id="process" class="py-24 relative bg-dark-900 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="process" class="min-h-screen flex flex-col justify-center py-24 relative bg-dark-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="text-center mb-20 process-header">
             <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-2">How We Work</h2>
             <h3 class="text-3xl md:text-5xl font-bold text-white">Our Proven Process</h3>
@@ -650,49 +650,115 @@
         if (typeof gsap !== 'undefined') {
             gsap.registerPlugin(ScrollTrigger);
 
-            // Process line animation
-            gsap.fromTo(".process-line", 
-                { scaleY: 0 },
-                {
-                    scrollTrigger: {
-                        trigger: "#process",
-                        start: "top center",
-                        end: "bottom center",
-                        scrub: 1
-                    },
-                    scaleY: 1,
-                    transformOrigin: "top top",
-                    ease: "none"
+            // About Section Pinned Scrub Animation
+            gsap.set("#about h2, #about h3, #about p", { y: 50, opacity: 0 });
+            gsap.set("#about .glass-panel", { y: 50, opacity: 0 });
+            gsap.set("#about .glass-card", { x: 50, opacity: 0 });
+            
+            const aboutTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#about",
+                    start: "top top",
+                    end: "+=1500", // Keep it pinned for 1500px of scroll
+                    pin: true,
+                    scrub: 1, // Smooth scrub
+                    anticipatePin: 1
                 }
-            );
-
-            // Process steps animation
-            const steps = gsap.utils.toArray('.process-step');
-            steps.forEach((step, i) => {
-                let xOffset = i % 2 === 0 ? -50 : 50;
-                
-                // For mobile, make everything come from the bottom
-                if (window.innerWidth < 768) {
-                    xOffset = 0;
-                }
-                
-                gsap.fromTo(step, 
-                    { opacity: 0, x: xOffset, y: 30 },
-                    {
-                        scrollTrigger: {
-                            trigger: step,
-                            start: "top 85%",
-                            toggleActions: "play none none reverse"
-                        },
-                        opacity: 1,
-                        x: 0,
-                        y: 0,
-                        duration: 0.8,
-                        ease: "power3.out"
-                    }
-                );
             });
+
+            aboutTl
+                .to("#about h2", { y: 0, opacity: 1, duration: 1 })
+                .to("#about h3", { y: 0, opacity: 1, duration: 1 }, "-=0.5")
+                .to("#about p", { y: 0, opacity: 1, duration: 1 }, "-=0.5")
+                .to("#about .glass-panel", { y: 0, opacity: 1, stagger: 0.5, duration: 1 })
+                .to("#about .glass-card", { x: 0, opacity: 1, duration: 1.5 })
+                .to({}, { duration: 0.5 }); // Small pause before unpinning
+
+            // Projects Section Animations
+            gsap.from("#projects h2, #projects h3, #projects a", {
+                scrollTrigger: { trigger: "#projects", start: "top 80%", toggleActions: "play none none reverse" },
+                y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power3.out"
+            });
+            gsap.utils.toArray("#projects .glass-card, #projects .col-span-full").forEach(card => {
+                gsap.from(card, {
+                    scrollTrigger: { trigger: card, start: "top 85%", toggleActions: "play none none reverse" },
+                    y: 40, opacity: 0, duration: 0.8, ease: "power3.out"
+                });
+            });
+
+            // Contact Section Animations
+            gsap.from("#contact > div > div:first-child > *", {
+                scrollTrigger: { trigger: "#contact", start: "top 80%", toggleActions: "play none none reverse" },
+                x: -30, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power3.out"
+            });
+            gsap.from("#contact .glass-card", {
+                scrollTrigger: { trigger: "#contact", start: "top 80%", toggleActions: "play none none reverse" },
+                x: 30, opacity: 0, duration: 0.8, ease: "power3.out"
+            });
+            gsap.from("#contact form > div, #contact form > button", {
+                scrollTrigger: { trigger: "#contact form", start: "top 85%", toggleActions: "play none none reverse" },
+                y: 20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out", delay: 0.4
+            });
+
+            // Process Section Pinned Scrub Animation
+            gsap.set(".process-header", { opacity: 0, y: 30 });
+            gsap.set(".process-line", { scaleY: 0, transformOrigin: "top top" });
+            
+            const isMobile = window.innerWidth < 768;
+            gsap.utils.toArray('.process-step').forEach((step, i) => {
+                let xOffset = isMobile ? 0 : (i % 2 === 0 ? -50 : 50);
+                gsap.set(step, { opacity: 0, x: xOffset, y: 20 });
+            });
+            
+            const processTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#process",
+                    start: "top top",
+                    end: "+=2000",
+                    pin: true,
+                    scrub: 1,
+                    anticipatePin: 1
+                }
+            });
+
+            processTl
+                .to(".process-header", { opacity: 1, y: 0, duration: 1 })
+                .to(".process-line", { scaleY: 1, duration: 6 }, "+=0.5")
+                .to(".process-step", { opacity: 1, x: 0, y: 0, stagger: 1, duration: 1 }, "<0")
+                .to({}, { duration: 0.5 }); // Small pause at the end
         }
+        // Encryption/Decryption Scramble Animation for Hero Text
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!<>-_\\/[]{}—=+*^?#0101";
+        
+        document.querySelectorAll('.scramble-text').forEach((element, index) => {
+            const originalText = element.textContent.trim();
+            element.setAttribute('data-text', originalText);
+            
+            // Immediately scramble it so it doesn't show clear text while waiting
+            element.textContent = originalText.split('').map(c => c === ' ' ? ' ' : letters[Math.floor(Math.random() * letters.length)]).join('');
+            
+            let iterations = 0;
+            
+            // Add delay to let preloader finish (approx 1200ms)
+            setTimeout(() => {
+                const interval = setInterval(() => {
+                    element.textContent = originalText.split('').map((char, i) => {
+                        if (i < iterations) {
+                            return originalText[i];
+                        }
+                        if (char === ' ') return ' ';
+                        return letters[Math.floor(Math.random() * letters.length)];
+                    }).join('');
+                    
+                    iterations += 1/3;
+                    
+                    if (iterations >= originalText.length) {
+                        clearInterval(interval);
+                        element.textContent = originalText;
+                    }
+                }, 30);
+            }, 1200 + (index * 200)); 
+        });
     });
 </script>
 
