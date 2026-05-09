@@ -120,8 +120,8 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
                     <a href="#" class="flex items-center gap-2">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-400 to-blue-600 flex items-center justify-center text-white font-bold text-xl">
-                            N
+                        <div class="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="NextShop Logo" class="w-full h-full object-contain scale-150">
                         </div>
                         <span class="font-bold text-2xl tracking-tight text-white">NextShop<span class="text-brand-400">.</span></span>
                     </a>
@@ -169,7 +169,9 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-1">
                     <a href="#" class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-400 to-blue-600 flex items-center justify-center text-white font-bold text-lg">N</div>
+                        <div class="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="NextShop Logo" class="w-full h-full object-contain scale-150">
+                        </div>
                         <span class="font-bold text-xl text-white">NextShop.</span>
                     </a>
                     <p class="text-gray-400 text-sm mb-6">Building smarter digital experiences through websites, AI automation, and digital media solutions.</p>
