@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -86,6 +88,31 @@
         .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
         .lenis.lenis-stopped { overflow: hidden; }
         .lenis.lenis-scrolling iframe { pointer-events: none; }
+
+        /* Light Mode Theme Overrides */
+        html.light-mode body { background-color: #f8fafc; color: #0f172a; }
+        html.light-mode main { background-color: #f8fafc !important; }
+        html.light-mode footer { background-color: #f8fafc !important; }
+        html.light-mode .bg-dark-900 { background-color: #f8fafc !important; }
+        html.light-mode .bg-dark-800 { background-color: #ffffff !important; }
+        html.light-mode .text-white:not(.force-dark *) { color: #0f172a !important; }
+        html.light-mode .text-gray-300:not(.force-dark *) { color: #334155 !important; }
+        html.light-mode .text-gray-400:not(.force-dark *) { color: #475569 !important; }
+        html.light-mode .border-white\/5:not(.force-dark *) { border-color: rgba(0, 0, 0, 0.05) !important; }
+        html.light-mode .border-white\/10:not(.force-dark *) { border-color: rgba(0, 0, 0, 0.1) !important; }
+        html.light-mode .border-white\/20:not(.force-dark *) { border-color: rgba(0, 0, 0, 0.2) !important; }
+        html.light-mode .glass-card:not(.force-dark *), 
+        html.light-mode .glass-panel:not(.force-dark *) {
+            background: rgba(255, 255, 255, 0.7) !important;
+            border-color: rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1) !important;
+        }
+        html.light-mode #testimonials .glass-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.6) 100%) !important;
+        }
+        html.light-mode .swiper-pagination-bullet { background-color: rgba(0, 0, 0, 0.2); }
+        html.light-mode #cursor-dot { background-color: #0f766e; }
+        html.light-mode #cursor-outline { border-color: rgba(15, 118, 110, 0.5); }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden selection:bg-brand-500 selection:text-white">
@@ -142,11 +169,19 @@
                         <a href="#faq" class="text-gray-300 hover:text-brand-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">FAQ</a>
                     </div>
                 </div>
-                <div class="hidden md:block">
+                <div class="hidden md:flex items-center gap-4">
+                    <button id="theme-toggle" class="text-gray-300 hover:text-brand-400 p-2 rounded-full transition-colors flex items-center justify-center w-10 h-10 border border-white/10 hover:border-brand-400/50">
+                        <i class="fa-solid fa-sun" id="theme-icon-light"></i>
+                        <i class="fa-solid fa-moon hidden" id="theme-icon-dark"></i>
+                    </button>
                     <a href="#contact" class="btn-primary text-white px-6 py-2.5 rounded-full font-medium text-sm inline-block">Let's Talk</a>
                 </div>
                 <!-- Mobile menu button -->
-                <div class="-mr-2 flex md:hidden">
+                <div class="-mr-2 flex md:hidden items-center gap-2">
+                    <button id="mobile-theme-toggle" class="text-gray-300 hover:text-brand-400 p-2 rounded-full transition-colors flex items-center justify-center w-10 h-10 border border-white/10">
+                        <i class="fa-solid fa-sun" id="mobile-theme-icon-light"></i>
+                        <i class="fa-solid fa-moon hidden" id="mobile-theme-icon-dark"></i>
+                    </button>
                     <button type="button" class="text-gray-400 hover:text-white p-2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                         <span class="sr-only">Open main menu</span>
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -278,6 +313,10 @@
         }
     </script>
     
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Vanilla Tilt JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <!-- Lenis Smooth Scroll -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <!-- GSAP & ScrollTrigger -->
@@ -348,5 +387,52 @@
             });
         }
     </script>
+    
+    <!-- Theme Toggle Logic -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+        const themeIconLight = document.getElementById('theme-icon-light');
+        const themeIconDark = document.getElementById('theme-icon-dark');
+        const mobileThemeIconLight = document.getElementById('mobile-theme-icon-light');
+        const mobileThemeIconDark = document.getElementById('mobile-theme-icon-dark');
+
+        function setTheme(isLight) {
+            if (isLight) {
+                document.documentElement.classList.add('light-mode');
+                if(themeIconLight) themeIconLight.classList.add('hidden');
+                if(themeIconDark) themeIconDark.classList.remove('hidden');
+                if(mobileThemeIconLight) mobileThemeIconLight.classList.add('hidden');
+                if(mobileThemeIconDark) mobileThemeIconDark.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.remove('light-mode');
+                if(themeIconLight) themeIconLight.classList.remove('hidden');
+                if(themeIconDark) themeIconDark.classList.add('hidden');
+                if(mobileThemeIconLight) mobileThemeIconLight.classList.remove('hidden');
+                if(mobileThemeIconDark) mobileThemeIconDark.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Check for saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            setTheme(true);
+        }
+
+        // Toggle Events
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                setTheme(!document.documentElement.classList.contains('light-mode'));
+            });
+        }
+        if (mobileThemeToggleBtn) {
+            mobileThemeToggleBtn.addEventListener('click', () => {
+                setTheme(!document.documentElement.classList.contains('light-mode'));
+            });
+        }
+    </script>
+
 </body>
 </html>
