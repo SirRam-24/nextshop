@@ -1035,4 +1035,93 @@
     }
 </style>
 
+<!-- Chatbot Widget -->
+<style>
+    .chatbot-wrapper {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 15px;
+    }
+    
+    .chatbot-container {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        transform-origin: bottom right;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* bouncy effect */
+    }
+    
+    .chatbot-container.open {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        pointer-events: auto;
+    }
+    
+    .chatbot-toggle-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #2dd4bf, #0d9488);
+        border: none;
+        box-shadow: 0 4px 15px rgba(13, 148, 136, 0.4);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        transition: all 0.3s ease;
+    }
+    
+    .chatbot-toggle-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(13, 148, 136, 0.6);
+    }
+    
+    .chatbot-toggle-btn i {
+        transition: transform 0.3s ease;
+    }
+</style>
+
+<div class="chatbot-wrapper" id="chatbotWrapper">
+    <div class="chatbot-container" id="chatbotContainer">
+        <iframe src="https://nexa.curiousbuilder.online/embed/f8226a69-7bbe-497c-b0c3-40d03ffc9025?bot_name=NextShop%20Ai%20Assistent&welcome_msg=Hello!%20How%20can%20I%20help%20you%20today%3F&theme=blue&bot_icon=fa-bolt" width="400" height="600" style="border: none; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);"></iframe>
+    </div>
+    <button class="chatbot-toggle-btn" onclick="toggleChatbot()">
+        <i class="fa-solid fa-message" id="chatbotIcon"></i>
+    </button>
+</div>
+
+<script>
+    function toggleChatbot() {
+        const container = document.getElementById('chatbotContainer');
+        const icon = document.getElementById('chatbotIcon');
+        
+        container.classList.toggle('open');
+        
+        if (container.classList.contains('open')) {
+            // Spin and change to X
+            icon.style.transform = 'rotate(90deg)';
+            setTimeout(() => {
+                icon.classList.remove('fa-message');
+                icon.classList.add('fa-xmark');
+                icon.style.transform = 'rotate(0deg)';
+            }, 150);
+        } else {
+            // Spin and change back to message icon
+            icon.style.transform = 'rotate(-90deg)';
+            setTimeout(() => {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-message');
+                icon.style.transform = 'rotate(0deg)';
+            }, 150);
+        }
+    }
+</script>
+
 {% endblock %}
